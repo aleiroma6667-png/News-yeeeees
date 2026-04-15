@@ -1,0 +1,375 @@
+/* --- Негізгі параметрлер --- */
+:root {
+  --primary-color: #ff4d4d; /* Қызыл екпін */
+  --secondary-color: #1a1a1a; /* Қара-сұр фон */
+  --bg-light: #f4f4f4;
+  --text-main: #333;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.header {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.logo { text-decoration: none; }
+
+.menu-btn-img {
+  width: 30px;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.nav-cart-btn {
+  background: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  min-width: 200px;
+}
+
+.dropdown-menu a {
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: #eee;
+}
+
+/* Banner */
+.news-header {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* --- Post List (Grid) --- */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card-content {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-card-content:hover {
+  transform: translateY(-5px);
+}
+
+.post-card-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.post-category {
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--primary-color);
+}
+
+/* --- Post Detail Page --- */
+.post-detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.post-detail-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.post-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.full-post-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  object-fit: cover;
+}
+
+.post-description {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* --- Comments Section --- */
+.comment-form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: var(--primary-color);
+}
+
+.comment-item {
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 15px !important;
+}
+
+/* --- Cart Page --- */
+.cart-page {
+  padding: 50px 0;
+}
+
+.cart-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: var(--shadow);
+  gap: 20px;
+}
+
+.cart-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-info {
+  flex-grow: 1;
+}
+
+.remove-item-btn {
+  background: #ffeded;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 15px 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Categories Grid --- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.category-card {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: var(--shadow);
+}
+
+.category-card:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.category-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* --- Utility --- */
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.5rem;
+}
+
+.divider {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.logout-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Меню иконкасы енді қара болуы керек (инверсияны алып тастаймыз) */
+.menu-btn-img {
+  width: 30px;
+  cursor: pointer;
+  filter: none;
+  /* Төмен түсіру үшін қолданылатын қасиет: */
+  margin-top: 5px; 
+  display: block; /* Вертикальды тегістеу жақсырақ жұмыс істеуі үшін */
+}
+
+.logo h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--primary-color); /* Қызыл екпін */
+  text-decoration: none;
+}
