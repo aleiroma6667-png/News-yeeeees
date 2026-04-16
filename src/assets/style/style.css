@@ -448,3 +448,20 @@ body {
     width: 200px;
   }
 }
+
+@media (max-width: 768px) {
+  /* Скрываем только текстовые ссылки, но оставляем кнопку активной */
+  .nav-menu {
+    display: flex; /* Меняем none на flex */
+  }
+  
+  .nav-item {
+    display: none; /* Скрываем обычные ссылки (Главная, О нас и т.д.) */
+  }
+
+  .nav-cart-btn {
+    display: block; /* Оставляем кнопку регистрации/корзины видимой */
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
