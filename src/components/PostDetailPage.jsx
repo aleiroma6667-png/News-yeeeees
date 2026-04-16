@@ -9,9 +9,8 @@ function PostDetailPage() {
   const [commentText, setCommentText] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-  
-  // --- ЖАҢАДАН ҚОСЫЛҒАН STATE-ТЕР ---
-  const [comments, setComments] = useState([]); // Пікірлер тізіміне арналған
+
+  const [comments, setComments] = useState([]); 
 
   useEffect(() => {
     // 1. Постты алу
@@ -24,7 +23,6 @@ function PostDetailPage() {
       }
     }
 
-    // 2. Пікірлерді алу (Осы постқа қатысты пікірлерді ғана сүзу)
     async function fetchComments() {
       try {
         const response = await axios.get(`https://621a91c96fd2860b.mokky.dev/coments?postId=${id}`);
@@ -52,7 +50,6 @@ function PostDetailPage() {
       setSubmitMessage("Пікір қосылды!");
       setCommentText('');
       
-      // Пікір қосылғаннан кейін тізімді бірден жаңарту
       setComments([...comments, response.data]);
       
     } catch (error) {
@@ -99,7 +96,6 @@ function PostDetailPage() {
 
         <hr className="divider" />
 
-        {/* ПІКІРЛЕРДІ КӨРСЕТУ БӨЛІМІ */}
         <div className="comments-display-section">
           <h3>Пікірлер ({comments.length})</h3>
           <div className="comments-list">
